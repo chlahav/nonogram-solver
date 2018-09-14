@@ -4,15 +4,32 @@
 <head>
     <title>Nonogram Solver</title>
     <link rel="stylesheet" href="src/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue" /></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" />
+    </script>
 </head>
 
 <body>
-    <div id="app">
-        {{ message }}
-    </div>
 
-    <script src="src/index.js"></script>
+  <!-- grid template -->
+  <script type="text/x-template" id="grid-template">
+    <table>
+      <tbody>
+        <tr v-for="row in rowCount">
+          <td v-for="column in columnCount">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+
+  <div id="mainGrid">
+    <dynamic-grid
+    :row-count="numberOfRows"
+    :column-count="numberOfColumns">
+    </dynamic-grid>
+  </div>
+
+  <script src="src/index.js"></script>
 
 </body>
 
